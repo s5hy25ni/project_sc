@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class WhitePages {
+public class DynamicQuery {
 	public static void main(String[] args) throws IOException {
 		String url="jdbc:mariadb://localhost:3306/javaproject01";
 		String user="root";
