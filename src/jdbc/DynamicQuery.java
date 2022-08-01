@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class DynamicQuery {
 	public static void main(String[] args) throws IOException {
-		String url="jdbc:mariadb://localhost:3306/javaproject01";
+		String url="jdbc:mariadb://localhost:3306/project_sc";
 		String user="root";
 		String pw="1234qwer";
 		
