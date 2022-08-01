@@ -11,7 +11,7 @@ public class StaticQuery {
 
 		try { 
 			
-			String url="jdbc:mariadb://localhost:3306/javaproject01";
+			String url="jdbc:mariadb://localhost:3306/project_sc";
 			String user="root";
 			String pw="1234qwer";
 			
@@ -31,6 +31,7 @@ public class StaticQuery {
 			
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로드 실패");
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
