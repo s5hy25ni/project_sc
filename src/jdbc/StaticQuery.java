@@ -31,6 +31,7 @@ public class StaticQuery {
 			
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로드 실패");
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
