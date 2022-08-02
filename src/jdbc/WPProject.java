@@ -54,6 +54,33 @@ class Db{
 			e.printStackTrace();
 		}
 	}
+	
+	public void delete(String name) {
+		String sql="delete from whitePages where name=?;";
+		PreparedStatement pmt;
+		try {
+			pmt = conn.prepareStatement(sql);
+			pmt.setString(1,name);
+			pmt.executeUpdate();
+			pmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void update(String name, String number) {
+		String sql="update whitePages set number=? where name=?;";
+		PreparedStatement pmt;
+		try {
+			pmt = conn.prepareStatement(sql);
+			pmt.setString(1, number);
+			pmt.setString(2, name);
+			pmt.executeUpdate();
+			pmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
 
 class WhitePages{
@@ -86,13 +113,25 @@ public class WPProject {
 		BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
 		Db db=new Db();
 		while(true) {
-			System.out.print("1.등록 2.출력 0.종료 : ");
+			System.out.print("1.등록 2.출력 3.삭제 4.수정 0.종료 : ");
 			int s=Integer.parseInt(in.readLine());
 			if(s==1) {
 				db.insert(new WhitePages());
 			}
 			if (s==2) {
 				db.select();
+			}
+			if (s==3) {
+				System.out.print("이름: ");
+				String name=in.readLine();
+				db.delete(name);
+			}
+			if (s==4) {
+				System.out.print("이름: ");
+				String name=in.readLine();
+				System.out.print("전화번호: ");
+				String number=in.readLine();
+				db.update(name, number);
 			}
 			if(s==0) {
 				break;
